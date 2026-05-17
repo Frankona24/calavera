@@ -1392,6 +1392,11 @@ img {
     display: none;
   }
   
+  .navigation.header-dark {
+    background: var(--color-white);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+  
   .navigation .container {
     flex-direction: column;
     padding: 0.75rem 1rem;
@@ -1415,6 +1420,7 @@ img {
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     padding: 0.25rem 0;
+    white-space: nowrap;
   }
   
   .page-header {
@@ -1422,11 +1428,12 @@ img {
   }
   
   .page-header h1 {
-    font-size: 1.5rem;
-    letter-spacing: 0.1em;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
     padding: 0 0.5rem;
     word-break: break-word;
     overflow-wrap: break-word;
+    white-space: normal;
   }
   
   .page-header p {
