@@ -1400,16 +1400,18 @@ img {
   }
   
   .navbar-toggler {
-    display: block;
+    display: block !important;
     flex-shrink: 0;
   }
   
   .navigation .container {
+    flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     padding: 1rem;
   }
   
+  /* Mobile menu panel - dark by default (header-dark pages) */
   .navbar-nav {
     position: fixed;
     top: 0;
@@ -1430,30 +1432,35 @@ img {
     right: 0;
   }
   
+  /* Default nav links (for header-dark pages) */
   .nav-link {
     font-size: 0.75rem;
     letter-spacing: 0.15em;
+    padding: 0.25rem 0;
     white-space: nowrap;
     color: var(--color-white);
   }
   
-  .page-header {
-    padding: 10rem 1rem 4rem;
+  /* Pages WITHOUT header-dark (white background) */
+  .navigation:not(.header-dark) {
+    background: var(--color-white);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
   }
   
-  .page-header h1 {
-    font-size: 1.2rem;
-    letter-spacing: 0.05em;
-    padding: 0 0.5rem;
-    word-break: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
+  .navigation:not(.header-dark) .navbar-nav {
+    background: var(--color-white);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
   }
   
-  .navbar-brand .logo-text {
-    height: 25px;
+  .navigation:not(.header-dark) .nav-link {
+    color: var(--color-primary);
   }
   
+  .navigation:not(.header-dark) .navbar-toggler span {
+    background: var(--color-primary);
+  }
+  
+  /* Pages WITH header-dark (dark background) */
   .navigation.header-dark {
     background: var(--color-primary);
     box-shadow: none;
@@ -1463,37 +1470,8 @@ img {
     background: var(--color-primary);
   }
   
-  .navbar-toggler span {
+  .navigation.header-dark .navbar-toggler span {
     background: var(--color-white);
-  }
-  
-  .navigation .container {
-    flex-direction: row;
-    padding: 1rem;
-  }
-  
-  .navbar-nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 300px;
-    height: 100vh;
-    background: var(--color-primary);
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
-    transition: var(--transition);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-  }
-  
-  .nav-link {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    padding: 0.25rem 0;
-    white-space: nowrap;
-    color: var(--color-white);
   }
   
   .page-header {
