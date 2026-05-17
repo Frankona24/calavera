@@ -1380,6 +1380,17 @@ img {
 }
 
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .container {
+    padding: 0 1rem;
+    max-width: 100%;
+    width: 100%;
+  }
+  
   .navbar-brand .logo-icon {
     height: 35px;
   }
@@ -1394,7 +1405,7 @@ img {
   }
   
   .navigation .container {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     padding: 1rem;
   }
@@ -1406,12 +1417,12 @@ img {
     width: 80%;
     max-width: 300px;
     height: 100vh;
-    background: var(--color-white);
+    background: var(--color-primary);
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
     transition: var(--transition);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
     z-index: 1001;
   }
   
@@ -1423,6 +1434,7 @@ img {
     font-size: 0.75rem;
     letter-spacing: 0.15em;
     white-space: nowrap;
+    color: var(--color-white);
   }
   
   .page-header {
@@ -1442,39 +1454,46 @@ img {
     height: 25px;
   }
   
-  .navbar-toggler {
-    display: none;
-  }
-  
   .navigation.header-dark {
-    background: var(--color-white);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
-  }
-  
-  .navigation .container {
-    flex-direction: column;
-    padding: 0.75rem 1rem;
-  }
-  
-  .navbar-nav {
-    position: static;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    background: transparent;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem 1.2rem;
-    padding-top: 0.5rem;
+    background: var(--color-primary);
     box-shadow: none;
   }
   
+  .navigation.header-dark.scrolled {
+    background: var(--color-primary);
+  }
+  
+  .navbar-toggler span {
+    background: var(--color-white);
+  }
+  
+  .navigation .container {
+    flex-direction: row;
+    padding: 1rem;
+  }
+  
+  .navbar-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--color-primary);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: var(--transition);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+  }
+  
   .nav-link {
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
     padding: 0.25rem 0;
     white-space: nowrap;
+    color: var(--color-white);
   }
   
   .page-header {
@@ -1520,6 +1539,21 @@ img {
 
   .testimonial-item .quote {
     font-size: 1rem;
+  }
+  
+  .hero-content {
+    padding: 0 1rem;
+  }
+  
+  .about-grid,
+  .contact-grid {
+    gap: 2rem;
+  }
+  
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
 }
 
