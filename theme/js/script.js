@@ -22,12 +22,7 @@
     }
   });
 
-  // Mobile Menu Toggle
-  $('.navbar-toggler').on('click', function() {
-    $('.navbar-nav').toggleClass('active');
-  });
-
-  // Close mobile menu on link click
+  // Mobile menu items close on click (for any overlay behavior)
   $('.nav-link').on('click', function() {
     $('.navbar-nav').removeClass('active');
   });
